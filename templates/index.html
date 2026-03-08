@@ -1,11 +1,37 @@
+<!DOCTYPE html>
 <html>
-    <body>
-        <h2>Language Translator English to Hindi</h2>
-        <form method = "POST">
-            <textarea placeholder="Enter text here" name="data" required></textarea> <br>
-            <button type="submit">Translate</button>
-        </form>
-        <h4>Result</h4>
-        {{ translated_text }}
-    </body>
+<head>
+    <title>English to Hindi Translator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🌐 English → Hindi Translator</h1>
+
+    <form method="POST">
+
+        <div class="input-box">
+            <label>Enter English Text</label>
+            <textarea name="data" placeholder="Type your sentence here..." required></textarea>
+        </div>
+
+        <button type="submit">Translate</button>
+
+        <div class="output-box">
+            <label>Hindi Translation</label>
+            <div class="result">
+                {{ translated_text }}
+            </div>
+        </div>
+
+    </form>
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
 </html>
